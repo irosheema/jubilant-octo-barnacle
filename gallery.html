@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>My Gallery</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Extra gallery styling */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌸 My Gallery 🌸</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="gallery.html">Gallery</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Welcome to My Creative Space!</h2>
+    <p>Here are some of my favorite photos, drawings, and creations ✨</p>
+
+    <div class="gallery">
+      <img src="yourphoto1.jpg" alt="Artwork 1">
+      <img src="yourphoto2.jpg" alt="Artwork 2">
+      <img src="yourphoto3.jpg" alt="Artwork 3">
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 by [Your Name]</p>
+  </footer>
+</body>
+</html>
