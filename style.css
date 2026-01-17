@@ -143,3 +143,61 @@ footer {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
+
+/* --- Lightbox / Modal Styles --- */
+
+#lightbox {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top of everything */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/ 90% opacity */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  animation: fadeIn 0.3s; /* Smooth fade in */
+}
+
+/* The Image inside the Lightbox */
+#lightbox-img {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+  border: 2px solid #00d1b2; /* Matches your teal accent */
+  box-shadow: 0 0 20px rgba(0, 209, 178, 0.5); /* Glowing effect */
+  border-radius: 5px;
+}
+
+/* The Close Button (x) */
+#close-btn {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 1001;
+}
+
+#close-btn:hover {
+  color: #00d1b2; /* Teal hover effect */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Add a pointer cursor to gallery images so people know they are clickable */
+.gallery img {
+  cursor: pointer;
+}
+
+/* Optional: Fade in animation */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
