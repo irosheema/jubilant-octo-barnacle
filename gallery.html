@@ -37,5 +37,38 @@
   <footer>
     <p>© 2025 by [irosheema]</p>
   </footer>
-</body>
+
+  <div id="lightbox">
+    <span id="close-btn">&times;</span>
+    <img id="lightbox-img" src="" alt="Full Screen Image">
+  </div>
+
+  <script>
+    // Get elements
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.getElementById('close-btn');
+    const galleryImages = document.querySelectorAll('.gallery img');
+
+    // Add click event to all gallery images
+    galleryImages.forEach(image => {
+      image.addEventListener('click', () => {
+        lightbox.style.display = 'flex'; // Show the lightbox
+        lightboxImg.src = image.src;    // Set the clicked image as the source
+      });
+    });
+
+    // Close button functionality
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+
+    // Close when clicking outside the image (on the dark background)
+    lightbox.addEventListener('click', (e) => {
+      if (e.target !== lightboxImg) {
+        lightbox.style.display = 'none';
+      }
+    });
+  </script>
+  </body>
 </html>
