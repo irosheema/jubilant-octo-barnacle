@@ -67,6 +67,9 @@ main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
+ 
+/* 🌟 ADD THIS LINE: Tells the main content to grab all available empty space */
+  flex: 1; 
 }
 
 main h2 {
@@ -137,12 +140,14 @@ main h2 {
 footer {
   text-align: center;
   padding: 30px 20px;
-  margin-top: 60px;
-  border-top: 2px solid #111111;
   background: #111111;
   color: #eae6df;
   font-weight: 600;
   font-size: 0.9rem;
+  border-top: 2px solid #111111;
+  
+  /* 🌟 UPDATE THIS LINE: Changes a fixed margin to an automatic push to the absolute bottom */
+  margin-top: auto; 
 }
 
 /* --- Lightbox / Modal Redesign --- */
