@@ -22,7 +22,7 @@ header h1 {
 }
 
 nav a {
-  color: #ff2828; /* teal accent */
+  color: #ff2828; /* red accent */
   margin: 0 15px;
   text-decoration: none;
   font-weight: bold;
@@ -41,7 +41,7 @@ nav a:hover {
 .hero h2 {
   font-size: 2.5em;
   margin-bottom: 10px;
-  color: #00d1b2;
+  color: #ff2828; /* red accent */
 }
 
 .hero p {
@@ -62,17 +62,17 @@ nav a:hover {
 .card {
   background: #222;
   padding: 20px;
-  border-left: 5px solid #00d1b2; /* teal pop */
+  border-left: 5px solid #ff2828; /* red pop */
   border-radius: 5px;
 }
 
 .card h3 {
   margin-top: 0;
-  color: #00d1b2;
+  color: #ff2828; /* red accent */
 }
 
 .card a {
-  color: #00d1b2;
+  color: #ff2828; /* red accent */
   text-decoration: none;
 }
 
@@ -93,13 +93,13 @@ footer {
   background: #222;
   padding: 20px;
   margin-bottom: 20px;
-  border-left: 5px solid #00d1b2; /* teal pop */
+  border-left: 5px solid #ff2828; /* red pop */
   border-radius: 5px;
 }
 
 .post h3 {
   margin-top: 0;
-  color: #00d1b2;
+  color: #ff2828; /* red accent */
 }
 
 .post p {
@@ -120,6 +120,7 @@ footer {
   border-radius: 5px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   transition: transform 0.3s ease;
+  cursor: pointer; /* Makes it clear images are clickable */
 }
 
 .gallery img:hover {
@@ -167,8 +168,8 @@ footer {
   display: block;
   max-width: 90%;
   max-height: 90%;
-  border: 2px solid #00d1b2; /* Matches your teal accent */
-  box-shadow: 0 0 20px rgba(0, 209, 178, 0.5); /* Glowing effect */
+  border: 2px solid #ff2828; /* Matches your red accent */
+  box-shadow: 0 0 20px rgba(255, 40, 40, 0.5); /* Glowing red effect */
   border-radius: 5px;
 }
 
@@ -186,13 +187,8 @@ footer {
 }
 
 #close-btn:hover {
-  color: #00d1b2; /* Teal hover effect */
+  color: #ff2828; /* Red hover effect */
   text-decoration: none;
-  cursor: pointer;
-}
-
-/* Add a pointer cursor to gallery images so people know they are clickable */
-.gallery img {
   cursor: pointer;
 }
 
