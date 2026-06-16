@@ -1,12 +1,18 @@
-/* Import Modern Neo-Grotesque Font */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,600;0,800;1,400&display=swap');
-
 /* Reset & Brutalist / Modern Minimalist Foundations */
 body {
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #eae6df; /* The warm aesthetic cream background */
+  
+  /* ⚠️ CHANGE THIS LINE: Set your image as the background */
+  background-image: url('bg.jpg'); 
+  
+  /* These settings ensure the image stretches perfectly to fill the screen and doesn't tile */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Keeps the background perfectly still while you scroll */
+  background-repeat: no-repeat;
+  
   color: #111111; /* Sharp dark text */
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
