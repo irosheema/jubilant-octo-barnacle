@@ -1,54 +1,221 @@
-/* Reset & Brutalist / Modern Minimalist Foundations */
+/* ==========================================================================
+   1. IMPORT MODERN FONTS & INITIAL RESET
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,600;0,800;1,400&display=swap');
+
 body {
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   margin: 0;
   padding: 0;
   
-  /* Background image settings */
+  /* Your beautiful background artwork */
   background-image: url('bg2.png'); 
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Keeps the background perfectly still while you scroll */
+  background-attachment: fixed;
   background-repeat: no-repeat;
   
   color: #111111; /* Sharp dark text */
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 
-  /* 🌟 THE FIX: Set a safe minimum height and space for the footer */
+  /* Sticky Footer Setup */
   position: relative;
   min-height: 100vh;
-  padding-bottom: 80px; /* Invisible buffer so content never hides behind the footer */
-  text-align: left; /* Guarantees layout blocks default to the left */
+  padding-bottom: 120px; /* Buffer zone so content never hides behind footer */
+  text-align: left;
 }
 
-/* Header & Modern Flat Navigation */
+/* ==========================================================================
+   2. HEADER & NAVIGATION (CENTERED EDITORIAL VIBE)
+   ========================================================================== */
 header {
   background: #eae6df;
   padding: 30px 20px;
-  text-align: center; /* Keeps your navigation and title centered beautifully */
-  border-bottom: 2px solid #111111; /* Sharp dividing line */
+  text-align: center; 
+  border-bottom: 2px solid #111111;
 }
 
 header h1 {
   margin: 0 0 15px 0;
   font-size: 2.2rem;
-  font-weight: 800; /* Ultra bold */
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: -0.05em;
 }
 
-/* Footer Section */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+nav a {
+  color: #ff2828; /* Your signature bright red accent */
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  background-color: #111111;
+  color: #eae6df;
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   3. MAIN CONTENT LAYOUT (WITH PROTECTIVE LEFT/RIGHT SPACING)
+   ========================================================================== */
+main {
+  max-width: 1200px;
+  margin: 0 auto;       /* Centers the main grid container area */
+  padding: 40px 24px;   /* 24px creates beautiful, elegant breathing room on the edges */
+  text-align: left;     /* Guarantees text stays neatly left-aligned */
+  box-sizing: border-box;
+}
+
+main h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   4. RESTORED BRUTALIST GALLERY GRID & EFFECTS
+   ========================================================================== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+/* Card Blocks matching your brand look */
+.gallery-item {
+  background: #ffffff;
+  border: 2px solid #111111; /* Crisp brutalist line layout */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 4px 4px 0px #111111; /* Flat graphic shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Grid Item Hover Animations */
+.gallery-item:hover {
+  transform: translate(-4px, -4px) scale(1.02);
+  box-shadow: 8px 8px 0px #ff2828; /* Shadow pops to your signature bright red */
+}
+
+/* Forces images and videos to fit inside the cards perfectly */
+.gallery img,
+.gallery video {
+  width: 100%;
+  height: 250px;
+  object-fit: cover; /* Keeps dimensions stable */
+  border-bottom: 2px solid #111111;
+  cursor: pointer; /* Pointer tells users it is clickable */
+}
+
+/* Text Captions inside Cards */
+.caption {
+  padding: 15px;
+  background: #ffffff;
+}
+
+.caption h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #111111;
+}
+
+.caption p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #555555;
+}
+
+/* ==========================================================================
+   5. BLOG POST STYLING
+   ========================================================================== */
+.post {
+  background: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 2px solid #111111;
+  border-left: 6px solid #ff2828; /* Bold red pop stripe */
+  border-radius: 5px;
+  box-shadow: 4px 4px 0px #111111;
+}
+
+.post h3 {
+  margin-top: 0;
+  color: #ff2828;
+}
+
+/* ==========================================================================
+   6. RESTORED LIGHTBOX FUNCTIONALITY (CLICK TO ENLARGE)
+   ========================================================================== */
+#lightbox {
+  display: none; /* Controlled by JavaScript on click */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Dark focused backdrop */
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.2s ease;
+}
+
+#lightbox-img {
+  max-width: 85%;
+  max-height: 85%;
+  border: 2px solid #ff2828; /* Red glowing frame border */
+  box-shadow: 0 0 20px rgba(255, 40, 40, 0.4);
+  border-radius: 5px;
+}
+
+#close-btn {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 50px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#close-btn:hover {
+  color: #ff2828;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ==========================================================================
+   7. STICKY GROUNDED FOOTER
+   ========================================================================== */
 footer {
   text-align: center;
-  padding: 30px 20px;
+  padding: 25px 20px;
   background: #111111;
   color: #eae6df;
   font-weight: 600;
   font-size: 0.9rem;
   border-top: 2px solid #111111;
   
-  /* 🌟 THE BOTTOM ANCHOR */
+  /* Absolute anchoring to the bottom edge */
   position: absolute;
   bottom: 0;
   left: 0;
