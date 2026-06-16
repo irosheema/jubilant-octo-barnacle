@@ -377,3 +377,38 @@ footer {
   50% { transform: scale(1.1); opacity: 1; color: #ff2828; }
   100% { transform: scale(1); opacity: 0.8; }
 }
+
+/* ==========================================================================
+   10. ULTIMATE CUSTOM INTERACTIVE CURSOR
+   ========================================================================== */
+/* Hide default mouse globally across the whole screen */
+html, body, a, button, img, video {
+  cursor: none !important; 
+}
+
+/* The core tracking center dot */
+.custom-cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #111111;
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* Prevents the cursor element from blocking clicks */
+  z-index: 9999;
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+/* The floating fluid outer ring */
+.custom-cursor-ring {
+  width: 26px;
+  height: 26px;
+  border: 2px solid #ff2828; /* Your signature bright red */
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9998;
+  /* This cubic-bezier creates a smooth lagging elasticity effect as you move */
+  transition: transform 0.08s cubic-bezier(0.25, 1, 0.5, 1), width 0.2s, height 0.2s, border-color 0.2s;
+}
