@@ -5,7 +5,7 @@ body {
   padding: 0;
   
   /* ⚠️ CHANGE THIS LINE: Set your image as the background */
-  background-image: url('bg.jpg'); 
+  background-image: url('bg.png'); 
   
   /* These settings ensure the image stretches perfectly to fill the screen and doesn't tile */
   background-size: cover;
