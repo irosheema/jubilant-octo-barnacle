@@ -124,32 +124,30 @@
   </div>
 
   <script>
-    // Get elements
+    // --- LIGHTBOX INTERACTIVE CODE ---
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const closeBtn = document.getElementById('close-btn');
     const galleryImages = document.querySelectorAll('.gallery img');
 
-    // Add click event to all gallery images
     galleryImages.forEach(image => {
       image.addEventListener('click', () => {
-        lightbox.style.display = 'flex'; // Show the lightbox
-        lightboxImg.src = image.src;    // Set the clicked image as the source
+        lightbox.style.display = 'flex';
+        lightboxImg.src = image.src;    
       });
     });
 
-    // Close button functionality
     closeBtn.addEventListener('click', () => {
       lightbox.style.display = 'none';
     });
 
-    // Close when clicking outside the image (on the dark background)
     lightbox.addEventListener('click', (e) => {
       if (e.target !== lightboxImg) {
         lightbox.style.display = 'none';
       }
     });
-    <script>
+
+    // --- GLOBAL CUSTOM CURSOR TRACKING CODE ---
     const dot = document.querySelector('.custom-cursor-dot');
     const ring = document.querySelector('.custom-cursor-ring');
 
@@ -178,4 +176,3 @@
   </script>
 </body>
 </html>
- 
