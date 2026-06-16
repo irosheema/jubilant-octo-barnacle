@@ -70,6 +70,8 @@ main {
  
 /* 🌟 ADD THIS LINE: Tells the main content to grab all available empty space */
   flex: 1; 
+/* 🌟 ADD THIS LINE: Explicitly forces all main content text back to the left side */
+  text-align: left; 
 }
 
 main h2 {
