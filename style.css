@@ -16,7 +16,13 @@ body {
   color: #111111; /* Sharp dark text */
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+
+  /* 🌟 ADD THESE THREE LINES: Forces the page to act as a full-screen vertical container */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
 }
+
 
 /* Header & Modern Flat Navigation */
 header {
