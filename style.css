@@ -51,18 +51,31 @@ nav {
 }
 
 nav a {
-  color: #ff2828; /* Your signature bright red accent */
-  padding: 8px 16px;
+  color: #111111; /* Clean black text by default */
+  background: #ffffff; /* Crisp white button blocks */
+  padding: 8px 18px;
   text-decoration: none;
-  font-weight: bold;
-  font-size: 0.95rem;
-  transition: all 0.2s ease;
+  font-weight: 800; /* Extra bold structural weight */
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 2px solid #111111; /* Strict structural borders */
+  border-radius: 4px;
+  box-shadow: 2px 2px 0px #111111; /* Flat graphic shadow */
+  transition: all 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Snappy tactile transition pop */
 }
 
 nav a:hover {
-  background-color: #111111;
-  color: #eae6df;
-  border-radius: 4px;
+  background-color: #111111; /* Inverts background to black */
+  color: #ff2828; /* Text pops to your signature bright red! */
+  transform: translate(-2px, -2px); /* Pops upward slightly on hover */
+  box-shadow: 4px 4px 0px #ff2828; /* Shadow expands and shifts to red */
+}
+
+/* Subtle accent for the link of the page you are currently on */
+nav a:active {
+  transform: translate(0px, 0px);
+  box-shadow: 1px 1px 0px #111111;
 }
 
 /* ==========================================================================
