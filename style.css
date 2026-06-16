@@ -4,10 +4,8 @@ body {
   margin: 0;
   padding: 0;
   
-  /* ⚠️ CHANGE THIS LINE: Set your image as the background */
+  /* Background image settings */
   background-image: url('bg2.png'); 
-  
-  /* These settings ensure the image stretches perfectly to fill the screen and doesn't tile */
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* Keeps the background perfectly still while you scroll */
@@ -17,18 +15,18 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 
-  /* 🌟 ADD THESE THREE LINES: Forces the page to act as a full-screen vertical container */
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; 
+  /* 🌟 THE FIX: Set a safe minimum height and space for the footer */
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 80px; /* Invisible buffer so content never hides behind the footer */
+  text-align: left; /* Guarantees layout blocks default to the left */
 }
-
 
 /* Header & Modern Flat Navigation */
 header {
   background: #eae6df;
   padding: 30px 20px;
-  text-align: center;
+  text-align: center; /* Keeps your navigation and title centered beautifully */
   border-bottom: 2px solid #111111; /* Sharp dividing line */
 }
 
@@ -38,104 +36,6 @@ header h1 {
   font-weight: 800; /* Ultra bold */
   text-transform: uppercase;
   letter-spacing: -0.05em;
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-nav a {
-  color: #111111;
-  padding: 8px 16px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  border: 2px solid transparent;
-  transition: all 0.2s ease;
-}
-
-nav a:hover {
-  background-color: #111111;
-  color: #eae6df;
-  border-radius: 4px;
-}
-
-/* Main Layout Wrap */
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
- 
-/* 🌟 ADD THIS LINE: Tells the main content to grab all available empty space */
-  flex: 1; 
-/* 🌟 ADD THIS LINE: Explicitly forces all main content text back to the left side */
-  text-align: left; 
-}
-
-main h2 {
-  font-size: 2rem;
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  margin-bottom: 30px;
-  text-transform: uppercase;
-}
-
-/* High-Contrast Grid Layout */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 25px;
-}
-
-/* Card Blocks matching the layout */
-.gallery-item {
-  background: #ffffff;
-  border: 2px solid #111111; /* Crisp brutalist border */
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 4px 4px 0px #111111; /* Flat graphic shadow */
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-.gallery-item:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px #ff2828; /* Shadow pops to your signature red */
-}
-
-/* Image and Video containment */
-.gallery-item img, 
-.gallery-item video {
-  width: 100%;
-  height: 240px;
-  object-fit: cover; /* Keeps everything perfectly proportional in the grid */
-  border-bottom: 2px solid #111111;
-  cursor: pointer;
-}
-
-/* Text Content Area inside Cards */
-.caption {
-  padding: 20px;
-  background: #ffffff;
-  flex-grow: 1;
-}
-
-.caption h3 {
-  margin: 0 0 8px 0;
-  font-size: 1.25rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: #111111;
-}
-
-.caption p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #555555;
-  font-weight: 400;
 }
 
 /* Footer Section */
@@ -148,48 +48,10 @@ footer {
   font-size: 0.9rem;
   border-top: 2px solid #111111;
   
-  /* 🌟 UPDATE THIS LINE: Changes a fixed margin to an automatic push to the absolute bottom */
-  margin-top: auto; 
-}
-
-/* --- Lightbox / Modal Redesign --- */
-#lightbox {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(234, 230, 223, 0.95); /* Light blurred overlay instead of dark */
-  justify-content: center;
-  align-items: center;
-  animation: fadeIn 0.2s ease;
-}
-
-#lightbox-img {
-  max-width: 85%;
-  max-height: 85%;
-  border: 3px solid #111111;
-  box-shadow: 8px 8px 0px #111111;
-  border-radius: 6px;
-}
-
-#close-btn {
+  /* 🌟 THE BOTTOM ANCHOR */
   position: absolute;
-  top: 20px;
-  right: 35px;
-  color: #111111;
-  font-size: 45px;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-#close-btn:hover {
-  color: #ff2828;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box; 
 }
