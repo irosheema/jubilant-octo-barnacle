@@ -1,199 +1,176 @@
-/* Reset & basic styles */
+/* Import Modern Neo-Grotesque Font */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,600;0,800;1,400&display=swap');
 
+/* Reset & Brutalist / Modern Minimalist Foundations */
 body {
-  font-family: 'Oswald', Helvetica, sans-serif;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   margin: 0;
   padding: 0;
-  background: #1c1c1c;
-  color: #f0f0f0;
-  line-height: 1.6;
+  background-color: #eae6df; /* The warm aesthetic cream background */
+  color: #111111; /* Sharp dark text */
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Header */
+/* Header & Modern Flat Navigation */
 header {
-  background: #111;
-  padding: 20px;
+  background: #eae6df;
+  padding: 30px 20px;
   text-align: center;
+  border-bottom: 2px solid #111111; /* Sharp dividing line */
 }
 
 header h1 {
-  margin: 0;
-  font-weight: normal;
+  margin: 0 0 15px 0;
+  font-size: 2.2rem;
+  font-weight: 800; /* Ultra bold */
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 nav a {
-  color: #ff2828; /* red accent */
-  margin: 0 15px;
+  color: #111111;
+  padding: 8px 16px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  background-color: #111111;
+  color: #eae6df;
+  border-radius: 4px;
 }
 
-/* Hero Section */
-.hero {
-  text-align: center;
-  padding: 60px 20px;
-}
-
-.hero h2 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-  color: #ff2828; /* red accent */
-}
-
-.hero p {
-  font-size: 1.2em;
-  color: #ccc;
-}
-
-/* Featured Cards */
-.featured {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+/* Main Layout Wrap */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 40px 20px;
-  max-width: 1000px;
-  margin: auto;
 }
 
-.card {
-  background: #222;
-  padding: 20px;
-  border-left: 5px solid #ff2828; /* red pop */
-  border-radius: 5px;
+main h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  margin-bottom: 30px;
+  text-transform: uppercase;
 }
 
-.card h3 {
-  margin-top: 0;
-  color: #ff2828; /* red accent */
-}
-
-.card a {
-  color: #ff2828; /* red accent */
-  text-decoration: none;
-}
-
-.card a:hover {
-  text-decoration: underline;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 15px;
-  background: #111;
-  color: #aaa;
-}
-
-/* Blog Posts */
-.post {
-  background: #222;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-left: 5px solid #ff2828; /* red pop */
-  border-radius: 5px;
-}
-
-.post h3 {
-  margin-top: 0;
-  color: #ff2828; /* red accent */
-}
-
-.post p {
-  color: #ccc;
-}
-
-/* Gallery */
+/* High-Contrast Grid Layout */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
 }
 
-.gallery img {
+/* Card Blocks matching the layout */
+.gallery-item {
+  background: #ffffff;
+  border: 2px solid #111111; /* Crisp brutalist border */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 4px 4px 0px #111111; /* Flat graphic shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-item:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #ff2828; /* Shadow pops to your signature red */
+}
+
+/* Image and Video containment */
+.gallery-item img, 
+.gallery-item video {
   width: 100%;
-  height: auto;
-  border-radius: 5px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
-  cursor: pointer; /* Makes it clear images are clickable */
+  height: 240px;
+  object-fit: cover; /* Keeps everything perfectly proportional in the grid */
+  border-bottom: 2px solid #111111;
+  cursor: pointer;
 }
 
-.gallery img:hover {
-  transform: scale(1.05);
+/* Text Content Area inside Cards */
+.caption {
+  padding: 20px;
+  background: #ffffff;
+  flex-grow: 1;
 }
 
-/* Hover effect for blog cards */
-.blog-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.blog-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-/* Hover effect for gallery images */
-.gallery-grid img {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.gallery-grid img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+.caption h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #111111;
 }
 
-/* --- Lightbox / Modal Styles --- */
+.caption p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555555;
+  font-weight: 400;
+}
 
+/* Footer Section */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 60px;
+  border-top: 2px solid #111111;
+  background: #111111;
+  color: #eae6df;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* --- Lightbox / Modal Redesign --- */
 #lightbox {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1000; /* Sit on top of everything */
+  display: none;
+  position: fixed;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0, 0, 0, 0.9); /* Black w/ 90% opacity */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  animation: fadeIn 0.3s; /* Smooth fade in */
+  background-color: rgba(234, 230, 223, 0.95); /* Light blurred overlay instead of dark */
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.2s ease;
 }
 
-/* The Image inside the Lightbox */
 #lightbox-img {
-  margin: auto;
-  display: block;
-  max-width: 90%;
-  max-height: 90%;
-  border: 2px solid #ff2828; /* Matches your red accent */
-  box-shadow: 0 0 20px rgba(255, 40, 40, 0.5); /* Glowing red effect */
-  border-radius: 5px;
+  max-width: 85%;
+  max-height: 85%;
+  border: 3px solid #111111;
+  box-shadow: 8px 8px 0px #111111;
+  border-radius: 6px;
 }
 
-/* The Close Button (x) */
 #close-btn {
   position: absolute;
   top: 20px;
   right: 35px;
-  color: #f1f1f1;
-  font-size: 50px;
-  font-weight: bold;
+  color: #111111;
+  font-size: 45px;
+  font-weight: 800;
   cursor: pointer;
-  transition: 0.3s;
-  z-index: 1001;
 }
 
 #close-btn:hover {
-  color: #ff2828; /* Red hover effect */
-  text-decoration: none;
-  cursor: pointer;
+  color: #ff2828;
 }
 
-/* Optional: Fade in animation */
 @keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
