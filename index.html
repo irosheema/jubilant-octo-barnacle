@@ -78,5 +78,34 @@
     </main> <footer>
     <p>© 2025 by [irosheema]</p>
   </footer>
+    <script>
+    const dot = document.querySelector('.custom-cursor-dot');
+    const ring = document.querySelector('.custom-cursor-ring');
+
+    // Tracks coordinates and positions our custom elements right on top of your hand
+    window.addEventListener('mousemove', (e) => {
+      dot.style.left = e.clientX + 'px';
+      dot.style.top = e.clientY + 'px';
+      
+      ring.style.left = e.clientX + 'px';
+      ring.style.top = e.clientY + 'px';
+    });
+
+    // OPTIONAL EXTRA COOL FEEDBACK: Grows the ring when hovering over clickable links!
+    document.querySelectorAll('a, .gallery img, .gallery video').forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        ring.style.width = '40px';
+        ring.style.height = '40px';
+        ring.style.borderColor = '#111111'; // Turns the ring black on hover
+        dot.style.backgroundColor = '#ff2828'; // Turns the center dot red
+      });
+      link.addEventListener('mouseleave', () => {
+        ring.style.width = '26px';
+        ring.style.height = '26px';
+        ring.style.borderColor = '#ff2828';
+        dot.style.backgroundColor = '#111111';
+      });
+    });
+  </script>
 </body>
 </html>
