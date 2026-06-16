@@ -222,3 +222,89 @@ footer {
   width: 100%;
   box-sizing: border-box; 
 }
+
+/* ==========================================================================
+   8. MANIFESTO & ABOUT STYLING
+   ========================================================================== */
+.manifesto-section {
+  max-width: 1200px;
+  margin: 60px auto 40px auto;
+  padding: 60px 24px;
+  border-top: 2px solid #111111; /* Sharp editorial dividing line */
+  box-sizing: border-box;
+}
+
+.manifesto-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Asymmetrical split: text is wider than the sidebar */
+  gap: 60px;
+}
+
+.manifesto-text h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  margin-top: 0;
+  margin-bottom: 25px;
+  color: #111111;
+}
+
+/* Bold magazine-style first paragraph character */
+.manifesto-text .dropcap {
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #ff2828; /* Your signature red */
+  margin-bottom: 20px;
+}
+
+.manifesto-text p {
+  font-size: 1.05rem;
+  color: #222222;
+  margin-bottom: 15px;
+}
+
+/* Sidebar styling */
+.manifesto-sidebar {
+  background: #ffffff;
+  border: 2px solid #111111;
+  border-radius: 6px;
+  padding: 25px;
+  box-shadow: 4px 4px 0px #111111;
+  align-self: start; /* Prevents the card from stretching weirdly */
+}
+
+.manifesto-sidebar h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  border-bottom: 2px solid #111111;
+  padding-bottom: 5px;
+}
+
+.toolkit-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toolkit-list li {
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 6px 0;
+  border-bottom: 1px dashed #cccccc;
+}
+
+.toolkit-list li:last-child {
+  border-bottom: none;
+}
+
+/* Responsive adjustment for phones */
+@media (max-width: 768px) {
+  .manifesto-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
