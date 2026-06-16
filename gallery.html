@@ -6,6 +6,8 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring"></div>
   <header>
     <h1> My Gallery</h1>
     <nav>
@@ -147,6 +149,33 @@
         lightbox.style.display = 'none';
       }
     });
+    <script>
+    const dot = document.querySelector('.custom-cursor-dot');
+    const ring = document.querySelector('.custom-cursor-ring');
+
+    window.addEventListener('mousemove', (e) => {
+      dot.style.left = e.clientX + 'px';
+      dot.style.top = e.clientY + 'px';
+      
+      ring.style.left = e.clientX + 'px';
+      ring.style.top = e.clientY + 'px';
+    });
+
+    document.querySelectorAll('a, .gallery img, .gallery video').forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        ring.style.width = '40px';
+        ring.style.height = '40px';
+        ring.style.borderColor = '#111111';
+        dot.style.backgroundColor = '#ff2828';
+      });
+      link.addEventListener('mouseleave', () => {
+        ring.style.width = '26px';
+        ring.style.height = '26px';
+        ring.style.borderColor = '#ff2828';
+        dot.style.backgroundColor = '#111111';
+      });
+    });
   </script>
-  </body>
+</body>
 </html>
+ 
